@@ -1,0 +1,31 @@
+#+TITLE: Rx-Widget
+Edit regexp widgets as rx forms
+
+* Overview
+This package lets you edit regexp widgets as rx forms.  The form is passed
+directly to the ~rx-to-string~ function.  It depends on [[https://github.com/mattiase/xr][xr]] package to convert
+regexps to rx forms.
+
+[[./rx-widget-scrot.png]]
+
+* Usage
+Just use ~rx-widget~ in ~:type~ argument in ~defcustom~
+
+#+begin_src emacs-lisp
+(defcustom my-custom-var
+  "\\(?:some\\)?[long]\\(?:regexp\\)+"
+  "My var with regexp"
+  :type 'rx-widget
+  :group 'my-group)
+#+end_src
+
+If you want to use it everywhere, you can override default ~regexp~ widget.
+
+#+begin_src emacs-lisp
+(define-widget 'regexp 'rx-widget "A regular expression in rx form.")
+#+end_src
+
+* COMMENT Local Variables
+# Local Variables:
+# eval: (add-hook 'after-save-hook #'org-md-export-to-markdown nil t)
+# End:
