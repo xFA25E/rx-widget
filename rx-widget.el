@@ -32,9 +32,11 @@
 ;;; Code:
 
 (require 'cl-lib)
+(require 'subr-x)
 (require 'wid-edit)
 
 (declare-function xr "ext:xr")
+(declare-function xr-pp-rx-to-str "ext:xr")
 
 (defun rx-widget-regexp-opt (strings &optional paren)
   "Simplified version of `regexp-opt' without compression.
@@ -60,7 +62,10 @@ FORM is first argument for `rx-to-string'"
 
 (defun rx-widget-to-internal (_widget value)
   "Convert WIDGET's external VALUE to internal form."
-  (concat "\n" (string-trim-right (xr-pp-rx-to-str (xr value 'brief)))))
+  (let ((internal (string-trim-right (xr-pp-rx-to-str (xr value 'brief)))))
+    (if (cl-find ?\n internal)
+        (concat "\n" internal)
+      internal)))
 
 (define-widget 'rx-widget 'sexp
   "A regular expression in rx form."
