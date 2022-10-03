@@ -6,7 +6,7 @@ This package lets you edit regexp widgets as rx forms.  The form is passed
 directly to the ~rx-to-string~ function.  It depends on [[https://github.com/mattiase/xr][xr]] package to convert
 regexps to rx forms.
 
-[[./rx-widget-scrot.png]]
+[[./scrot.png]]
 
 * Usage
 Just use ~rx-widget~ in ~:type~ argument in ~defcustom~

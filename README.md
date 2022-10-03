@@ -1,12 +1,12 @@
 # Table of Contents
 
-1.  [Overview](#org3e8589f)
-2.  [Usage](#org424da4a)
+1.  [Overview](#orga95fb65)
+2.  [Usage](#org1eaccf2)
 
 Edit regexp widgets as rx forms
 
 
-<a id="org3e8589f"></a>
+<a id="orga95fb65"></a>
 
 # Overview
 
@@ -14,10 +14,10 @@ This package lets you edit regexp widgets as rx forms.  The form is passed
 directly to the `rx-to-string` function.  It depends on [xr](https://github.com/mattiase/xr) package to convert
 regexps to rx forms.
 
-![img](./rx-widget-scrot.png)
+![img](./scrot.png)
 
 
-<a id="org424da4a"></a>
+<a id="org1eaccf2"></a>
 
 # Usage
 
