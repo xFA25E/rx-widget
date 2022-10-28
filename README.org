@@ -22,7 +22,9 @@ Just use ~rx-widget~ in ~:type~ argument in ~defcustom~
 If you want to use it everywhere, you can override default ~regexp~ widget.
 
 #+begin_src emacs-lisp
-(define-widget 'regexp 'rx-widget "A regular expression in rx form.")
+(with-eval-after-load 'wid-edit
+  (require 'rx-widget)
+  (define-widget 'regexp 'rx-widget "A regular expression in rx form."))
 #+end_src
 
 * COMMENT Local Variables

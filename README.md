@@ -1,12 +1,12 @@
 # Table of Contents
 
-1.  [Overview](#orga95fb65)
-2.  [Usage](#org1eaccf2)
+1.  [Overview](#orgef95f07)
+2.  [Usage](#org6d4516e)
 
 Edit regexp widgets as rx forms
 
 
-<a id="orga95fb65"></a>
+<a id="orgef95f07"></a>
 
 # Overview
 
@@ -17,7 +17,7 @@ regexps to rx forms.
 ![img](./scrot.png)
 
 
-<a id="org1eaccf2"></a>
+<a id="org6d4516e"></a>
 
 # Usage
 
@@ -31,4 +31,6 @@ Just use `rx-widget` in `:type` argument in `defcustom`
 
 If you want to use it everywhere, you can override default `regexp` widget.
 
-    (define-widget 'regexp 'rx-widget "A regular expression in rx form.")
+    (with-eval-after-load 'wid-edit
+      (require 'rx-widget)
+      (define-widget 'regexp 'rx-widget "A regular expression in rx form."))
