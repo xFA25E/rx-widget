@@ -26,8 +26,3 @@ If you want to use it everywhere, you can override default ~regexp~ widget.
   (require 'rx-widget)
   (define-widget 'regexp 'rx-widget "A regular expression in rx form."))
 #+end_src
-
-* COMMENT Local Variables
-# Local Variables:
-# eval: (add-hook 'after-save-hook #'org-md-export-to-markdown nil t)
-# End:
